@@ -12,7 +12,7 @@ const App = () => {
       <nav>
         <ul className="flex justify-center items-center pt-10 space-x-5 font-medium text-lg">
           <li><Link to="/">Gallery</Link></li>
-          <li><Link to="/Form">Form</Link></li>
+          <li><Link to="/form">Form</Link></li>
         </ul>
       </nav>
       <Routes>
