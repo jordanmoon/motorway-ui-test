@@ -17,9 +17,9 @@ const Slider = ({ open, setOpen, item }) => {
                 imgClassName="w-full max-h-[70vh] object-contain object-top"
               />
             </div>
-            <div className="grid grid-cols-5 gap-10 divide-x">
+            <div className="flex flex-col-reverse md:grid md:grid-cols-5 gap-10 md:divide-x">
               <div className="col-span-3">
-                <div className="flex items-start space-x-5">
+                <div className="flex flex-col md:flex-row items-start md:space-x-5 space-y-2.5 md:space-y-0">
                   <Image 
                     jpgSrc={`${item.user.profile_image}.jpg`}
                     webpSrc={`${item.user.profile_image}.webp`}
@@ -40,7 +40,7 @@ const Slider = ({ open, setOpen, item }) => {
                   </div>
                 </div>
               </div>
-              <div className="flex flex-col items-start space-y-5 col-span-2 pl-10">
+              <div className="flex flex-col items-start space-y-5 col-span-2 md:pl-10">
                 {item.description && <p>{item.description}</p>}
                 <Likes likes={item.likes} />
               </div>
