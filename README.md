@@ -1,11 +1,4 @@
-
-# Motorway UI Test
-
-
-Welcome to the Motorway UI technical test. This test focuses on user experience, and your skills with HTML, CSS, a11y and leveraging browser APIs.
-
-
-## Set up
+# Set up
 
 This repo is a slightly modified Create React App and an Express server which serves a JSON feed of images.
 
@@ -17,62 +10,36 @@ This repo is a slightly modified Create React App and an Express server which se
 
 After this, CRA will open a tab with the app running, usually `localhost:3000`. If you look in `src/App.js` you'll see the API call to the server is already made and will console log out the results.
 
-#### Note
+# Jordan's notes
+Hey there 👋
 
-- The server and CRA are watching the relevant files and will hot reload if any changes are made.
+## Browser of choice
+Chrome please!
 
-- Feel free to modify or install whatever code you feel is necessary. If installing packages which are wrappers for native browsers APIs please leave a comment explaining why.
+## Tailwind
 
+I appreciate that you may of had some candidates that are only capable of using TailwindCSS. I have tons of experience with vanilla CSS as well as SASS! I opted for TailwindCSS as I find it much faster to develop with. I'd be more than happy to share code that uses SASS if you'd like 😃
 
-## Tasks
+## Improvments
 
-### 1. UI development
+**Image sizes**
+If this were a real world scenario, we'd absolutely have to have various image sizes. Apologies if i'm mistaken, but I don't believe S3 allows query parameters for sizing? It'd be much better to get this type of thing setup! For example we could render images like so:
 
-Create a responsive UI to display the images returned by the API.
+```
+<figure>
+    <picture class="image__image">
+    <img 
+      sizes="(min-width: 1024px) 33.33vw, (min-width: 768px) 50vw, 100vw"
+      alt="Some alt text" 
+    srcset="https://motorway-ui-test.s3.eu-west-2.amazonaws.com/car-images/m3m-lnR90uM.jpg?width=600 600w, https://motorway-ui-test.s3.eu-west-2.amazonaws.com/car-images/m3m-lnR90uM.jpg?width=1000 1000w, https://motorway-ui-test.s3.eu-west-2.amazonaws.com/car-images/m3m-lnR90uM.jpg?width=1400 1400w, https://motorway-ui-test.s3.eu-west-2.amazonaws.com/car-images/m3m-lnR90uM.jpg?width=1800 1800w, https://motorway-ui-test.s3.eu-west-2.amazonaws.com/car-images/m3m-lnR90uM.jpg?width=2200 2200w">
+  </picture>
+</figure>
+```
 
-The aim is to demonstrate your experience and knowledge of HTML, CSS, JS and React features; and demonstrate creative thinking in how images can be presented and manipulated.
+**Modal Query**
+It'd be nice to set this up a query like `/cars?id=12332423' when you open an image in full size. Would be much nicer for sharing, refreshing etc.
 
-Images aren't optimised and their dimensions are varied, there are .jpg and .webp versions on s3, so you will need to take this into account.
-
-#### Inspiration:
-
-https://twitter.com/andybarefoot/status/1251844621262602242
-
-http://www.artist-developer.com/
-
-#### Some ideas to get you started:
-
-Resizable thumbnails
-
-Modal to review full size images
-
-Image effects or filters
-
-
-### 2. Performance
-
-The API that is returning images is rather slow. Show how it can be sped up, and show how you would measure the improvement in performance.
+**TypeScript**
+I'd love to have used TypeScript here! It felt odd not being yelled at by linting 😂
 
 
-### 3. Forms
-
-One of the oldest yet trickiest parts of web development is forms, so we’d like to see how you handle them.
-
-Add a form to your app with the following fields. The form doesn't need to submit to anywhere, but must validate on the client.
-
-- [ ] Name
-- [ ] Email
-- [ ] Date of birth
-- [ ] Favourite colour
-- [ ] Salary (using a range input)
-
-
-## Time allowed
-
-We appreciate that your time is valuable and recommend you not spend more than 2 hours on these tasks.
-
-
-## Notes
-
-The goal of the test is to prove your understanding of the concepts of modern HTML/CSS/JS, but not to produce something production ready or pixel perfect.
-Your work will be tested in the browser of your choice, so please specify this when submitting. This can include pre-release browsers such as Chrome Canary or Safari Technology Preview if you want to work with experimental features.
