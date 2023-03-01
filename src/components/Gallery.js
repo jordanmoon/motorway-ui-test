@@ -81,7 +81,7 @@ const Gallery = () => {
               {
                 images && images.map((img, i) => {
                   return (
-                    <div key={img.id} ref={setLastElement} className={`${(i % 6 === 0) && 'col-span-2 row-span-2'}`} style={{order: i % 12 === 0 ? i + 2 : i}}>
+                    <div key={img.id} ref={setLastElement} className={`${(i % 6 === 0) && 'lg:col-span-2 lg:row-span-2'}`} style={{order: i % 12 === 0 ? i + 2 : i}}>
                       <GalleryItem img={img} openModal={openModal} />
                     </div>
                   )
